@@ -2,18 +2,22 @@
  * Melhore o código abaixo
  */
 
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-item',
+  selector: "app-item",
   template: `
-	<div *ngIf="status === 'error'">Erro!</div>
-	<div *ngIf="status === 'success'">Sucesso!</div>
-	<div *ngIf="status === 'warning'">Atenção!</div>
-  `
+    {{status === 'error' ?
+    <div *ngIf="status === 'error'">Erro!</div>
+    : status === 'success' ?
+    <div *ngIf="status === 'success'">Sucesso!</div>
+    :status === 'warning' ?
+    <div *ngIf="status === 'warning'">Atenção!</div>
+    :
+    <div>N/A</div>
+    }}
+  `,
 })
 export class ItemComponent {
-
-	status: string;
-
+  status: string;
 }
