@@ -1,7 +1,8 @@
 /**
  * Melhore o código abaixo
  */
-import React from "react";
+const { React, useState, useEffect } = require("react");
+
 
 //Criei um componente para o botão, dentro do próprio componente. Pois é só ele que usará esse btn
 export default function Button({value}){
@@ -9,10 +10,8 @@ export default function Button({value}){
 }
 
 export default function Page() {
+  const [value, setValue] = useState('Salvar')
   return (
-    <>
-      <Button value="Salvar" />
-      <Button value="Cancelar" />
-    </>
+      <Button value={value === 'Salvar' ? 'Salvar' : 'Cancelar'} />
   );
 }
