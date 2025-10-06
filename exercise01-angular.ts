@@ -2,17 +2,16 @@
  * O botão de adicionar item não atualiza a tela imediatamente.
  */
 
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-item',
+  selector: "app-item",
 })
 export class ItemComponent {
+  //lista vazia
+  @Input() list: string[] = [];
 
-	@Input() list: string[] = [];
-
-	add(item: string) {
-		this.list.push(item);
-	}
-
+  add(item: string) {
+    this.list.push(item);
+  }
 }
